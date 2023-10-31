@@ -1,0 +1,317 @@
+/*Обнуление*/
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+/* Стилизация каталога */
+.catalog {
+    font-family: Tahoma;
+    display: flex;
+    justify-content: start; /* Равное расстояние между записями */
+    flex-flow: row wrap;
+}
+
+/* Стилизация каждой записи */
+.catalog-item {
+    box-sizing: border-box;
+    width: calc(25vw - 10px); /* Ширина каждой записи, чтобы поместить две записи в ряд и учесть отступы */
+    height: 20vh;
+    margin-bottom: 10px; /* Расстояние между записями */
+    margin: 5px;
+    padding: 5px;
+    border: 2px solid Grey;
+    border-radius: 3%;
+    display: flex; /* Сделаем элемент контейнером для изображения и информации */
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+    min-width: 185px;
+}
+@media screen and (max-width: 1280px){
+    .catalog-item{
+        font-size: 14px;
+        min-width: calc(33vw - 5px);
+        margin: 2.5px;
+    }
+}
+@media screen and (max-width: 1080px) {
+    .catalog-item {
+        font-size: 13px;
+        min-width: calc(33vw - 5px);
+        margin: 2.5px;
+    }
+}
+@media screen and (max-width: 820px){
+    .catalog-item{
+        font-size: 11px;
+        min-width: calc(50vw - 5px);
+        margin: 2.5px;
+    }
+    .catalog-item img {
+        max-width: 30vw;
+    }
+}
+.catalog_img_cont {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+/* Стилизация изображения */
+.catalog-item img {
+    width: auto; /* Максимальная ширина изображения (рекомендуемая ширина для 250x250px) */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    margin-right: 10px; /* Отступ справа от изображения */
+    max-width: 20vw;
+    max-height: 18vh;
+    object-fit: cover;
+}
+/* Стилизация информации о автобусе */
+.catalog-item .bus-info {
+    flex-grow: 1; /* Расширяем блок с информацией, чтобы занимать всё доступное место справа от изображения */
+    flex-direction: column;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Стилизация информации о каждом автобусе */
+.catalog-item .bus-info p {
+    margin: 0; /* Убираем отступы у абзацев в блоке с информацией */
+}
+/* Стилизация меню */
+.menu {
+    height: auto;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #333; /* Цвет фона меню */
+    display: flex;
+    justify-content: space-around;
+    position: sticky; /* Используем sticky позиционирование */
+    top: 0; /* Располагаем меню вверху страницы */
+    z-index: 1;
+}
+
+.menu li {
+    display: inline-block;
+    /* Расстояние между пунктами меню */
+    flex: 1;
+}
+
+.menu li a {
+    width: 100%;
+    color: white; /* Цвет текста ссылок */
+    text-decoration: none;
+    padding: 10px 0px; /* Отступы вокруг текста ссылок */
+    font-size: 34px;
+    display: inline-block;
+    flex: 1;
+    text-align: center;
+}
+
+.menu li a:hover {
+    background-color: #555; /* Цвет фона при наведении на ссылку */
+    width: 100%;
+}
+body{
+    background-color: WhiteSmoke;
+}
+.button-list, .form-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.button-list li a, .form-list form button, .submit-form {
+    background-color: #333;
+    border-radius: 8px;
+    color: white;
+    margin: 10px 10px 10px 5px;
+    padding: 12px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-family: Tahoma;
+}
+.form-list form button, .submit-form {
+    padding: 10px 28px;
+    margin-top: 0;
+}
+.button-list li a:hover, .form-list form button:hover, .submit-form:hover {
+    background-color: #555;
+}
+.findByParam, .deleteById {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+}
+.findByParam label, .deleteById label {
+    flex-wrap: wrap;
+    width: 74px;
+    margin-right: 2px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+.findByParam input, .deleteById input, .findByParam .long-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 60px;
+    font-size: 14.5px;
+    text-align: center;
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
+.findByParam .long-input { width:300px; }
+
+
+
+.table {
+    box-sizing: border-box;
+    width: 99%;
+    margin: 0 5px 20px 5px;
+    border: 1px solid DarkGray;
+    font-size: 18px;
+}
+.table th {
+    font-weight: bold;
+    padding: 10px;
+    background: Gainsboro;
+    border: 1px solid DarkGray;
+}
+.table td{
+    padding: 10px 15px;
+    border: 1px solid DarkGray;
+    text-align: center;
+}
+.table tbody tr:nth-child(odd){
+    background: #fff;
+}
+.table tbody tr:nth-child(even){
+    background: #fff;
+}
+.table input{
+    height: 100%;
+    width: 100%;
+    font-family: inherit;
+    box-sizing: border-box;
+    font-size: 1.25rem;
+    text-align: center;
+}
+#scheduleTable{
+    margin: 0 0 0.375rem 0;
+    padding: 0;
+    width: 100%;
+}
+#scheduleTable td {
+    padding: 0.375rem 0.75rem;
+}
+#scheduleTable input::placeholder {
+    color: #B7B7B7;
+}
+.table__label{
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: 1.25rem;
+}
+
+.text-field {
+    margin-bottom: 0.40rem;
+    font-size: 1.25rem;
+}
+.text-field__label {
+    display: block;
+    margin-bottom: 0.10rem;
+}
+.text-field__input {
+    display: block;
+    width: 100%;
+    height: calc(2.35rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-family: inherit;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #bdbdbd;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.text-field__input::placeholder{
+    color: #B7B7B7;
+}
+.text-field__input:hover{ border-color: #888; }
+.text-field__select {
+    display: block;
+    min-width: 8%;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    padding: 0.4rem 0.4rem;
+    margin: 0;
+    border: 1px solid #bdbdbd;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    border-radius: 0.25rem;
+    font-family: inherit;
+}
+.text-field__select:hover{ border-color: #888; }
+.text-field__select:focus{
+    border:1px black solid;
+}
+
+.center-global-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.addForm-container {
+    width: 30%;
+    min-width: 325px;
+    display: flex;
+    flex-direction: column;
+}
+.addForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.successMessage {
+    margin: .30rem .10rem;
+    font-size: 1.25rem;
+    color: limegreen;
+    text-align: center;
+}
+.errorMessage, .durationByRouteNumberError{
+    margin: .30rem .10rem;
+    font-size: 1.25rem;
+    color: red;
+    text-align: center;
+}
+.durationByRouteNumberError, .durationByRouteNumber{
+    font-size: 18px;
+    margin: .4rem 0 1rem;
+}
+#getDurationByRouteNumber{ flex-basis: 100%;}
+.updateInstruction {
+    margin: .55rem 0 .55rem 0;
+    font-size: 1.15rem;
+    color: DarkGrey;
+}
+.submit-form {
+    margin: -10px 0 5px 0;
+    min-width: 35%;
+    align-self: flex-end;
+}
+#emptyMessage{
+    margin: .45rem 1.55rem;
+    font-size: 1.35rem;
+    color: Grey;
+    font-family: Tahoma;
+}
