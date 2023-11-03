@@ -7,15 +7,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="spring-boot-service" />
+        <module name="buspark_managment" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="kursova" target="17" />
+      <module name="spring-boot-service" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="buspark_managment" options="-parameters" />
       <module name="spring-boot-service" options="-parameters" />
     </option>
   </component>
